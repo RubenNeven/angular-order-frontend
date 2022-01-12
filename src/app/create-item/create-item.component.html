@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+
+        <textarea #descriptiontextarea class="form-control" type="text" id="description" formControlName="description"></textarea>
+
+        <p style="text-align: right">{{descriptiontextarea.textLength}}/255</p>
+
+        <div *ngIf="description.errors?.['maxlength']">
+          <p class="invalid-message">Please enter a description < 255 characters!</p>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="price">Price:</label>
+            <input class="form-control" type="number" id="price" formControlName="price">
+            <div *ngIf="price.errors?.['min']">
+              <p class="invalid-message">Please enter a positive price!</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="amountOfStock">Stock:</label>
+            <input class="form-control" type="number" id="amountOfStock" formControlName="amountOfStock">
+            <div *ngIf="amountOfStock.errors?.['min']">
+              <p class="invalid-message">Please enter a positive stock!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="btn-group">
+        <button class="btn btn-success" [disabled]="!createItemForm.valid" type="submit">Create item</button>
+        <a class="btn btn-dark" routerLink="../">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

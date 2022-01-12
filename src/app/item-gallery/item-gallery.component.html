@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="searchText">Search item: </label>
+      <input [(ngModel)]="searchText" type="text" id="searchText" class="form-control" placeholder="Search item"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary" routerLink="/create">Create new item</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <br>
+    <div class="container">
+      <div *ngFor="let item of items | filter:searchText" (click)="showDetails(item)">
+        <div>
+          <h2>{{item.name}}</h2>
+          <p>Price: €{{item.price}}</p>
+          <p>Stock Urgency: <span [ngClass]="setColor(item.stockUrgency)"> {{item.stockUrgency}}</span></p>
+          <img src="../../assets/images/macbook.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

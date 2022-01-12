@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input readonly class="form-control" type="text" id="name" formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea readonly class="form-control" type="text" id="description" formControlName="description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="price">Price:</label>
+            <input readonly class="form-control" type="number" id="price" formControlName="price">
+          </div>
+          <div class="col-md-6">
+            <label for="amountOfStock">Stock:</label>
+            <input readonly class="form-control" type="number" id="amountOfStock" formControlName="amountOfStock">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="btn-group">
+        <button class="btn btn-success" type="submit">Edit</button>
+        <a class="btn btn-dark" routerLink="../">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
