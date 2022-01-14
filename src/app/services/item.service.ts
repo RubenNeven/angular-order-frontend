@@ -32,7 +32,7 @@ export class ItemService {
     return this.http.get<Item>(this._url + id);
   }
 
-  updateItem(id: string, value: Item): Observable<void> {
+  updateItem(id: string, value: Item): Observable<any> {
     return this.http.put<void>(this._url + id, value);
   }
 }

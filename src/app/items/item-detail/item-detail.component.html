@@ -1,5 +1,6 @@
 <div *ngIf="selectedItem" class="container" xmlns="http://www.w3.org/1999/html">
   <div class="row">
+
     <form>
       <div class="form-group-row">
           <label for="name"><strong>Id:&nbsp;</strong></label>
@@ -30,8 +31,8 @@
       </div>
       <br>
       <div class="btn-group">
-        <a class="btn btn-primary mr-2" routerLink="/edit">Update</a>
-        <a class="btn btn-dark" routerLink="../..">Back</a>
+        <a routerLink="../../update/{{selectedItem.id}}" class="btn btn-primary mr-2" routerLink="/edit">Update</a>
+        <a routerlink="../" class="btn btn-dark" routerLink="../..">Back</a>
       </div>
     </form>
   </div>
