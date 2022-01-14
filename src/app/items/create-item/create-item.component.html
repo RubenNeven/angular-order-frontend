@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
+    <form  [formGroup]="itemForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Name:</label>
         <input class="form-control" type="text" id="name" formControlName="name">
@@ -39,9 +39,12 @@
       </div>
       <br>
       <div class="btn-group">
-        <button class="btn btn-success" [disabled]="!createItemForm.valid" type="submit">Create item</button>
+        <button class="btn btn-success" [disabled]="!itemForm.valid" type="submit">Create item</button>
         <a class="btn btn-dark" routerLink="../">Cancel</a>
       </div>
     </form>
+    <ng-template #loading>
+      Loading data...
+    </ng-template>
   </div>
 </div>

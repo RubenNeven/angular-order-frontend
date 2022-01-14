@@ -14,12 +14,12 @@
   <div class="row">
     <br>
     <div class="container">
-      <div *ngFor="let item of items | filter:searchText" (click)="showDetails(item)">
+      <div *ngFor="let item of items | filter:searchText" >
         <div>
-          <h2>{{item.name}}</h2>
+          <h2 routerLink="detail/{{item.id}}">{{item.name}}</h2>
           <p>Price: €{{item.price}}</p>
           <p>Stock Urgency: <span [ngClass]="setColor(item.stockUrgency)"> {{item.stockUrgency}}</span></p>
-          <img src="../../assets/images/macbook.jpg">
+          <img routerLink="detail/{{item.id}}" src="../../../assets/images/macbook.jpg">
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from './app-routing.module';
 import {ItemsModule} from "./items/items.module";
+import {CustomersModule} from "./customers/customers.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {ItemsModule} from "./items/items.module";
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ItemsModule
+    ItemsModule,
+    CustomersModule
   ],
   providers: [],
   exports: [],
